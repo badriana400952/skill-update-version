@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./assets/banner.jpg" alt="Framework Upgrade Skills Banner" width="100%" />
+</p>
+
 # Framework Upgrade Skills Suite
 
 Suite keahlian AI (skills) untuk memigrasikan dan meng-upgrade versi framework frontend (**React**, **Next.js**, dan **Vue.js**) secara otomatis, aman, dan berlandaskan **dokumentasi resmi**, tanpa halusinasi perubahan API.
@@ -127,13 +131,97 @@ node bin/cli.js install
 
 ---
 
-## 🚀 Cara Menggunakannya di AI Coding Agent Setelah Diinstall
+## 🤖 Cara Menggunakan Skill di AI Coding Agent
 
-Setelah diinstall ke agent mereka, pengguna tidak perlu lagi mengingat sintaks rumit. Cukup buka terminal coding agent mereka (Google Antigravity, Claude Code, Cursor, dsb.) di project lama mereka, dan ketik perintah alami:
+Setelah pengguna menginstall suite ini via terminal (`npx @badriana/framework-upgrade-skills install` atau script lainnya), skill akan otomatis terdaftar di AI agent mereka.
 
-- *"Tolong upgrade project ini ke Next.js 15 dan ikuti panduan resminya."*
-- *"Gunakan framework-upgrade-orchestrator untuk menganalisis dan memperbarui framework project ini."*
-- *"Periksa apakah ada breaking changes React 19 di komponen ini dan perbaiki menggunakan react-upgrade."*
+---
+
+### 1. AI Agent Apa Saja yang Didukung?
+
+| AI Agent / Tool | Lokasi Folder Skill | Cara Integrasi |
+| :--- | :--- | :--- |
+| **Google Antigravity** | `~/.gemini/config/skills/` | Otomatis terdeteksi global |
+| **Claude Code (Anthropic)**| `~/.claude/skills/` atau `./.claude/skills/` | Otomatis terdeteksi via `/skill` |
+| **Cursor / Windsurf** | `./.agents/skills/` atau `.cursorrules` | Diletakkan di root project target |
+| **Open-source Coding Agents**| `./.agents/skills/` | Standar direktori skills agent |
+
+---
+
+### 2. Apakah Menggunakan Slash Command atau Prompt Biasa?
+
+Pengguna bisa menggunakan **salah satu dari 3 cara berikut**, sesuai gaya kerja masing-masing:
+
+#### Opsi A: Prompt Alami / Natural Language (Paling Praktis)
+AI Coding Agent memiliki kemampuan *semantic routing*. AI akan secara otomatis memanggil skill yang tepat begitu pengguna menyebutkan kata kunci upgrade framework:
+```text
+Tolong analisis project ini dan upgrade ke Next.js 15 mengikuti dokumentasi resminya.
+```
+```text
+Migrasikan aplikasi React 18 ini ke React 19, cari breaking changes dan perbaiki.
+```
+
+#### Opsi B: Menggunakan Slash Command (`/skill`)
+Di **Claude Code** atau antarmuka agent yang mendukung slash command:
+```text
+/skill framework-upgrade-orchestrator
+```
+Atau memanggil spesialis langsung:
+```text
+/skill react-upgrade
+/skill nextjs-upgrade
+/skill vue-upgrade
+```
+
+#### Opsi C: Explicit Skill Mention
+Menyebutkan nama skill secara spesifik di prompt agar AI langsung fokus ke instruksi skill tersebut:
+```text
+Gunakan skill "framework-upgrade-orchestrator" untuk memeriksa versi dan merencanakan upgrade project ini.
+```
+```text
+Gunakan skill "nextjs-upgrade". Jangan rombak Pages Router ke App Router, cukup naikkan versi Next.js ke 15.
+```
+
+---
+
+### 3. Contoh Skenario & Prompt Nyata
+
+#### Skenario 1: Next.js 14 ke Next.js 15
+```text
+Saya punya project Next.js 14. Tolong gunakan skill nextjs-upgrade untuk:
+1. Memperbarui dependensi Next.js dan React 19
+2. Menjalankan codemod resmi untuk async request APIs (cookies, headers, params)
+3. Memeriksa konfigurasi caching fetch
+4. Menjalankan tsc dan npm run build untuk memverifikasi hasilnya
+```
+
+#### Skenario 2: React 18 ke React 19
+```text
+Gunakan skill react-upgrade untuk memigrasikan project ini ke React 19:
+1. Jalankan codemod resmi react/19
+2. Cari dan ubah defaultProps pada function component ke ES6 default parameter
+3. Perbaiki ref callback dan forwardRef yang deprecated
+4. Jalankan typecheck untuk memastikan tidak ada error tipe TypeScript
+```
+
+#### Skenario 3: Vue 2 ke Vue 3
+```text
+Gunakan skill vue-upgrade untuk meng-upgrade aplikasi Vue 2 ini:
+1. Buat rencana migrasi bertahap menggunakan @vue/compat
+2. Jangan ubah Options API menjadi <script setup> kecuali ada error yang mengharuskan
+3. Perbarui Vue Router ke v4 dan perbaiki sintaks event bus ($on/$off)
+```
+
+---
+
+### 4. Apa yang Terjadi di Balik Layar Saat Skill Berjalan?
+
+Ketika pengguna memicu skill ini, AI agent **tidak akan langsung mengubah kode secara membabi-buta**:
+1. **Fase 1 (Inspeksi)**: AI membaca `package.json`, lockfile, dan file konfigurasi (`next.config.*`, `vite.config.*`, `tsconfig.json`).
+2. **Fase 2 (Dokumentasi Resmi)**: AI membuka referensi lokal (`breaking-changes.md`, `compatibility-matrix.md`) atau mencari panduan resmi versi target.
+3. **Fase 3 (Rencana Migrasi)**: AI menyusun daftar file yang terkena dampak, dependensi yang bentrok, dan codemod yang bisa dijalankan.
+4. **Fase 4 (Eksekusi Aman)**: AI menjalankan codemod resmi, melakukan perbaikan kode terkecil yang aman, lalu mengeksekusi `install`, `typecheck`, dan `build`.
+5. **Fase 5 (Laporan Akhir)**: AI melaporkan file yang diubah, status build, dan catatan jika ada dependensi pihak ketiga yang perlu perhatian manual.
 
 
 ---
