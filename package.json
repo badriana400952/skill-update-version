@@ -1,9 +1,17 @@
 {
-  "name": " @badriana400952/framework-upgrade-skills",
+  "name": "@badriana/framework-upgrade-skills",
   "version": "1.0.0",
   "description": "Automated framework upgrade skills suite for AI coding agents (Antigravity, Claude Code, Cursor, etc.)",
   "main": "bin/cli.js",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/badriana400952/skill-update-versi.git"
+  },
+  "bugs": {
+    "url": "https://github.com/badriana400952/skill-update-versi/issues"
+  },
+  "homepage": "https://github.com/badriana400952/skill-update-versi#readme",
   "bin": {
     "framework-upgrade-skills": "./bin/cli.js",
     "framework-upgrade": "./bin/cli.js"
@@ -29,6 +37,6 @@
     "vue-upgrade",
     "codemods"
   ],
-  "author": "",
+  "author": "badriana",
   "license": "MIT"
 }

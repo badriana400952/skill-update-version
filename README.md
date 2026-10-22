@@ -77,32 +77,20 @@ Anda dan pengguna lain dapat menginstall dan menggunakan skill suite ini melalui
 
 ### Metode 1: Lewat NPX / NPM (Paling Direkomendasikan untuk Publik)
 
-Setelah dipublikasikan ke npm registry (atau via GitHub repo), siapa pun dapat langsung menginstallnya dengan satu perintah di terminal:
+Setelah dipublikasikan ke npm registry, siapa pun dapat langsung menginstallnya dengan satu perintah di terminal:
 
 ```bash
 # Menjalankan installer otomatis (mendeteksi Antigravity / Claude Code)
-npx framework-upgrade-skills install
+npx @badriana/framework-upgrade-skills install
 
 # Atau menentukan target spesifik:
-npx framework-upgrade-skills install --agent antigravity
-npx framework-upgrade-skills install --agent claude
-npx framework-upgrade-skills install --agent local # Pasang di project saat ini (.agents/skills)
+npx @badriana/framework-upgrade-skills install --agent antigravity
+npx @badriana/framework-upgrade-skills install --agent claude
+npx @badriana/framework-upgrade-skills install --agent local # Pasang di project saat ini (.agents/skills)
 
 # Memeriksa framework & versi project sebelum upgrade:
-npx framework-upgrade-skills inspect
+npx @badriana/framework-upgrade-skills inspect
 ```
-
-> **Untuk Mempublikasikan ke NPM Anda Sendiri:**
-> 1. Ubah field `"name"` di `package.json` menjadi nama unik Anda (misal: `@username/framework-upgrade-skills`).
-> 2. Jalankan di terminal:
->    ```bash
->    npm login
->    npm publish --access public
->    ```
-> 3. Pengguna lain langsung bisa menjalankan:
->    ```bash
->    npx @username/framework-upgrade-skills install
->    ```
 
 ---
 
@@ -112,12 +100,12 @@ Pengguna lain cukup menjalankan 1 baris perintah di terminal mereka:
 
 **Di Windows (PowerShell):**
 ```powershell
-irm https://raw.githubusercontent.com/<username>/skill-update-versi/main/install.ps1 | iex
+irm https://raw.githubusercontent.com/badriana400952/skill-update-versi/main/install.ps1 | iex
 ```
 
 **Di Linux / macOS (Bash / Zsh):**
 ```bash
-curl -fsSL https://raw.githubusercontent.com/<username>/skill-update-versi/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/badriana400952/skill-update-versi/main/install.sh | bash
 ```
 
 ---
@@ -127,7 +115,7 @@ curl -fsSL https://raw.githubusercontent.com/<username>/skill-update-versi/main/
 Jika pengguna meng-clone repository ini secara manual:
 
 ```bash
-git clone https://github.com/<username>/skill-update-versi.git
+git clone https://github.com/badriana400952/skill-update-versi.git
 cd skill-update-versi
 
 # Install skills ke Antigravity & AI Agent di komputernya:

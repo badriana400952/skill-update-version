@@ -17,7 +17,7 @@ if [ -d "$LOCAL_SKILLS_DIR" ]; then
 else
     echo "[+] Mengunduh skills dari GitHub..."
     TMP_DIR=$(mktemp -d)
-    curl -fsSL https://github.com/username/skill-update-versi/archive/refs/heads/main.tar.gz | tar -xz -C "$TMP_DIR"
+    curl -fsSL https://github.com/badriana400952/skill-update-versi/archive/refs/heads/main.tar.gz | tar -xz -C "$TMP_DIR"
     SRC_DIR="$TMP_DIR/skill-update-versi-main/skills"
 fi
 

@@ -5,7 +5,7 @@ Write-Host "============================================================" -Foreg
 Write-Host "     FRAMEWORK UPGRADE SKILLS SUITE INSTALLER (WINDOWS)     " -ForegroundColor Cyan
 Write-Host "============================================================" -ForegroundColor Cyan
 
-$repoUrl = "https://github.com/username/skill-update-versi"
+$repoUrl = "https://github.com/badriana400952/skill-update-versi"
 $tempZip = Join-Path $env:TEMP "framework-upgrade-skills.zip"
 $tempExtract = Join-Path $env:TEMP "framework-upgrade-skills-main"
 $antigravitySkillsDir = Join-Path $env:USERPROFILE ".gemini\config\skills"
